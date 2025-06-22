@@ -60,11 +60,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(177, 137);
+            this.tabControl1.Location = new System.Drawing.Point(177, 146);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(646, 372);
+            this.tabControl1.Size = new System.Drawing.Size(646, 374);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -80,7 +80,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(638, 343);
+            this.tabPage1.Size = new System.Drawing.Size(638, 345);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Create Account";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -95,7 +95,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(268, 283);
+            this.button1.Location = new System.Drawing.Point(292, 280);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 45);
@@ -161,25 +161,26 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(638, 343);
+            this.tabPage2.Size = new System.Drawing.Size(638, 345);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Block Account";
             // 
             // txt_Status
             // 
             this.txt_Status.Enabled = false;
-            this.txt_Status.Location = new System.Drawing.Point(249, 227);
+            this.txt_Status.Location = new System.Drawing.Point(189, 227);
             this.txt_Status.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_Status.Name = "txt_Status";
-            this.txt_Status.Size = new System.Drawing.Size(188, 22);
+            this.txt_Status.Size = new System.Drawing.Size(263, 22);
             this.txt_Status.TabIndex = 20;
+            this.txt_Status.TextChanged += new System.EventHandler(this.txt_Status_TextChanged);
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(298, 285);
+            this.btn_Search.Location = new System.Drawing.Point(189, 285);
             this.btn_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(94, 36);
+            this.btn_Search.Size = new System.Drawing.Size(108, 36);
             this.btn_Search.TabIndex = 18;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
@@ -188,19 +189,19 @@
             // txt_BlockName
             // 
             this.txt_BlockName.Enabled = false;
-            this.txt_BlockName.Location = new System.Drawing.Point(249, 186);
+            this.txt_BlockName.Location = new System.Drawing.Point(189, 186);
             this.txt_BlockName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_BlockName.Name = "txt_BlockName";
-            this.txt_BlockName.Size = new System.Drawing.Size(188, 22);
+            this.txt_BlockName.Size = new System.Drawing.Size(263, 22);
             this.txt_BlockName.TabIndex = 17;
             // 
             // btn_Block
             // 
             this.btn_Block.Enabled = false;
-            this.btn_Block.Location = new System.Drawing.Point(542, 374);
+            this.btn_Block.Location = new System.Drawing.Point(337, 285);
             this.btn_Block.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Block.Name = "btn_Block";
-            this.btn_Block.Size = new System.Drawing.Size(128, 45);
+            this.btn_Block.Size = new System.Drawing.Size(115, 36);
             this.btn_Block.TabIndex = 15;
             this.btn_Block.Text = "Block/Unblock";
             this.btn_Block.UseVisualStyleBackColor = true;
@@ -214,19 +215,19 @@
             "Student",
             "Faculty",
             "Academic Officer"});
-            this.cmb_BlockRole.Location = new System.Drawing.Point(249, 144);
+            this.cmb_BlockRole.Location = new System.Drawing.Point(189, 144);
             this.cmb_BlockRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_BlockRole.Name = "cmb_BlockRole";
-            this.cmb_BlockRole.Size = new System.Drawing.Size(188, 24);
+            this.cmb_BlockRole.Size = new System.Drawing.Size(263, 24);
             this.cmb_BlockRole.TabIndex = 14;
             this.cmb_BlockRole.SelectedIndexChanged += new System.EventHandler(this.cmb_BlockRole_SelectedIndexChanged);
             // 
             // txt_Block_Username
             // 
-            this.txt_Block_Username.Location = new System.Drawing.Point(249, 95);
+            this.txt_Block_Username.Location = new System.Drawing.Point(189, 95);
             this.txt_Block_Username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_Block_Username.Name = "txt_Block_Username";
-            this.txt_Block_Username.Size = new System.Drawing.Size(188, 22);
+            this.txt_Block_Username.Size = new System.Drawing.Size(263, 22);
             this.txt_Block_Username.TabIndex = 13;
             this.txt_Block_Username.TextChanged += new System.EventHandler(this.txt_Block_Username_TextChanged);
             // 

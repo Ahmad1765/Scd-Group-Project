@@ -1,14 +1,8 @@
 ﻿using Lect25_W3_LA.BL;
 using Lect25_W3_LA.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lect25_W3_LA.GUI

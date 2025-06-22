@@ -1,14 +1,8 @@
 ﻿using Lect25_W3_LA.BL;
 using Lect25_W3_LA.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lect25_W3_LA.GUI
@@ -19,11 +13,6 @@ namespace Lect25_W3_LA.GUI
         private UserDTO uDTO_Block;
         private UserDTO adminDTO;
         private AdminBL aBL;
-
-
-
-        //add overlays for txt_UserID,txt_Password and txt_Name only if they enabled
-
 
         public AdminMainGUI(UserDTO admin)
         {
@@ -116,24 +105,36 @@ namespace Lect25_W3_LA.GUI
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            if (!(txt_Block_Username.Text == ""))
+            string username = txt_Block_Username.Text.Trim();
+
+            if (!string.IsNullOrEmpty(username))
             {
+                // Check if the username is admin (case-insensitive)
+                if (string.Equals(username, "admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Error: Cannot block the admin account.");
+                    btn_Block.Enabled = false;
+                    txt_BlockName.Text = "";
+                    cmb_BlockRole.Text = "";
+                    txt_Status.Text = "";
+                    return;
+                }
+
                 try
                 {
-                    uDTO_Block = aBL.CheckAccount(txt_Block_Username.Text);
+                    uDTO_Block = aBL.CheckAccount(username);
                     if (uDTO_Block != null)
                     {
                         txt_Block_Username.Text = uDTO_Block.UserID;
-
                         txt_BlockName.Text = uDTO_Block.Name;
                         cmb_BlockRole.Text = uDTO_Block.Role;
                         txt_Status.Text = uDTO_Block.Status;
                         btn_Block.Enabled = true;
-                        if (uDTO_Block.Status.Equals("active"))
+                        if (uDTO_Block.Status.Equals("active", StringComparison.OrdinalIgnoreCase))
                         {
                             btn_Block.Text = "Block";
                         }
-                        else if (uDTO_Block.Status.Equals("block"))
+                        else if (uDTO_Block.Status.Equals("block", StringComparison.OrdinalIgnoreCase))
                         {
                             btn_Block.Text = "Active";
                         }
@@ -141,15 +142,17 @@ namespace Lect25_W3_LA.GUI
                     else
                     {
                         MessageBox.Show("Record not found");
+                        btn_Block.Enabled = false;
                     }
                 }
-                catch(SqlException ex)
+                catch (SqlException)
                 {
                     MessageBox.Show("Record not found due to exception");
+                    btn_Block.Enabled = false;
                 }
-                
             }
         }
+
 
 
         private void btn_Block_Click(object sender, EventArgs e)
@@ -218,6 +221,11 @@ namespace Lect25_W3_LA.GUI
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_Status_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
